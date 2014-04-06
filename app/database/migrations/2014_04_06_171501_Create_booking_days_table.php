@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBookingsTable extends Migration {
+class CreateBookingDaysTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,22 +12,16 @@ class CreateBookingsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('bookings', function(Blueprint $table) {
+		Schema::create('booking_days', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('user_id', false, true);
+			$table->integer('booking_id', false, true);
 			$table->integer('hotel_id', false, true);
 			$table->integer('room_id', false, true);
-			$table->smallInteger('year', false, true);
-			$table->tinyInteger('month', false, true);
-			$table->tinyInteger('day', false, true);
-			$table->integer('to_days', false, true);
-			$table->float('total');
-			$table->enum('currency', array('euro', 'dollar', 'pund'));
 			$table->timestamps();
 			$table->softDeletes();
 			
-			$table->foreign('user_id')
-			->references('id')->on('users')
+			$table->foreign('booking_id')
+			->references('id')->on('bookings')
 			->onDelete('cascade');
 			
 			$table->foreign('hotel_id')
@@ -47,7 +41,7 @@ class CreateBookingsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('bookings');
+		Schema::drop('booking_days');
 	}
 
 }

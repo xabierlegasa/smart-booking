@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRoomAvailableDatesTable extends Migration {
+class CreateRoomAvailableDaysTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateRoomAvailableDatesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('room_available_dates', function(Blueprint $table) {
+		Schema::create('room_available_days', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('room_id', false, true);
 			$table->smallInteger('year', false, true);
@@ -34,7 +34,7 @@ class CreateRoomAvailableDatesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('room_available_dates');
+		Schema::drop('room_available_days');
 	}
 
 }
