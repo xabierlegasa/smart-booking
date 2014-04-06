@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'byhours',
-			'username'  => 'byhours',
-			'password'  => 'byhours',
+			'database'  => 'smart_booking',
+			'username'  => 'smart_booking',
+			'password'  => 'smart_booking',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_general_ci',
 			'prefix'    => '',
