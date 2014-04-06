@@ -26,7 +26,6 @@ class CreateUsersTable extends Migration {
 			$table->date('birthdate');
 			$table->string('birthdate_code', 4);
 			$table->integer('age');
-			$table->string('city_id');
 			$table->timestamps();
 			$table->softDeletes();
 		});
